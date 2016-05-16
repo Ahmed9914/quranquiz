@@ -34,7 +34,7 @@ display('Parsing .. (%)');
 last_p = -1; lskip = 0;
 for i=1:words_cnt-2
     tmp = find(strcmp(q.txt(:),q.txt(i))>0);
-    q.sim1(i).cnt = length(tmp);
+    q.sim1(i).cnt = length(tmp); %TODO: Subtract 1 from here?!
     q.sim1(i).idx = tmp(tmp~=i);
 
     q.sim2(i).idx = q.sim1(i).idx(strcmp(q.txt(q.sim1(i).idx(q.sim1(i).idx<words_cnt)+1)    ,q.txt(i+1))>0);
